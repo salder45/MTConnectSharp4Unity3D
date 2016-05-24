@@ -220,11 +220,8 @@ public class ClientControllerv2 : MonoBehaviour {
 		UnityEngine.Debug.Log (response.text);
 		using (StringReader sr = new StringReader(xmlContent))
 		{
-			Debug.Log ("1");
 			XDocument xDoc = XDocument.Load(sr);
-			Debug.Log ("2-> "+xDoc.Descendants().First(e => e.Name.LocalName == "Header").Attribute("lastSequence"));
 			lastSequence = Convert.ToInt64(xDoc.Descendants().First(e => e.Name.LocalName == "Header").Attribute("lastSequence").Value);
-			Debug.Log ("3");
 			if (xDoc.Descendants().Any(e => e.Attributes().Any(a => a.Name.LocalName == "dataItemId")))
 			{
 				IEnumerable<XElement> xmlDataItems = xDoc.Descendants()
