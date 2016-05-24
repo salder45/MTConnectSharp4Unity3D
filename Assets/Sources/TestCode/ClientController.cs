@@ -10,7 +10,7 @@ using System.Timers;
 
 using MTConnectSharp4Unity3D;
 
-public class ClientControllerv2 : MonoBehaviour {
+public class ClientController : MonoBehaviour {
 	/// <summary>
 	/// The base uri of the agent
 	/// </summary>
